@@ -1,16 +1,63 @@
-﻿using DesafioPOO.Models;
+﻿using System;
+using DesafioPOO.Models;
 
 // TODO: Realizar os testes com as classes Nokia e Iphone
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Qual celular deseja cadastrar? (Nokia ou Iphone?)");
+        string escolha = Console.ReadLine();
 
+        if (escolha.ToLower() == "nokia")
+        {
+            Console.WriteLine("Celular Nokia");
+            Console.WriteLine("Informe o número do celular: ");
+            string numeroNokia = Console.ReadLine();
 
-Console.WriteLine("Celular Nokia: ");
-Smartphone nokia = new Nokia(numero: "99222-2222", modelo: "Nokia4", imei: "010101", memoria: 32);
-nokia.Ligar();
-nokia.ReceberLigacao();
-nokia.InstalarAplicativo("Facebook");
+            Console.WriteLine("Informe o modelo do celular: ");
+            string modeloNokia = Console.ReadLine();
 
-Console.WriteLine("Celular Iphone: ");
-Smartphone iphone = new Iphone(numero: "98111-1111", modelo: "Iphone11", imei: "101010", memoria: 64);
-iphone.Ligar();
-iphone.ReceberLigacao();
-iphone.InstalarAplicativo("Instagram");
+            Console.WriteLine("Informe o IMEI do celular: ");
+            string imeiNokia = Console.ReadLine();
+
+            Console.WriteLine("Informe qual a memoria do celular: ");
+            int memoriaNokia = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("\n");
+
+            Smartphone nokia = new Nokia(numeroNokia, modeloNokia, imeiNokia, memoriaNokia);
+            nokia.Dados();
+            nokia.Ligar();
+            nokia.ReceberLigacao();
+            nokia.InstalarAplicativo("Facebook");
+        }
+        else if (escolha.ToLower() == "iphone")
+        {
+            Console.WriteLine("Celular Iphone");
+            Console.WriteLine("Informe o número do celular: ");
+            string numeroIphone = Console.ReadLine();
+
+            Console.WriteLine("Informe o modelo do celular: ");
+            string modeloIPhone = Console.ReadLine();
+
+            Console.WriteLine("Informe o IMEI do celular: ");
+            string imeiIphone = Console.ReadLine();
+
+            Console.WriteLine("Informe qual a memoria do celular: ");
+            int memoriaIphone = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("\n");
+
+            Smartphone iphone = new Iphone(numeroIphone, modeloIPhone, imeiIphone, memoriaIphone);
+            iphone.Dados();
+            iphone.Ligar();
+            iphone.ReceberLigacao();
+            iphone.InstalarAplicativo("Instagram");
+        }
+        else
+        {
+            Console.WriteLine("Opção inválida. Por favor, escolha entre Nokia ou iPhone.");
+        }
+    }
+}
