@@ -28,6 +28,7 @@ class Program
 
             Smartphone nokia = new Nokia(numeroNokia, modeloNokia, imeiNokia, memoriaNokia);
             nokia.Dados();
+            Console.WriteLine("Testando funcionalidades:");
             nokia.Ligar();
             nokia.ReceberLigacao();
             nokia.InstalarAplicativo("Facebook");
@@ -51,6 +52,7 @@ class Program
 
             Smartphone iphone = new Iphone(numeroIphone, modeloIPhone, imeiIphone, memoriaIphone);
             iphone.Dados();
+            Console.WriteLine("Testando funcionalidades:");
             iphone.Ligar();
             iphone.ReceberLigacao();
             iphone.InstalarAplicativo("Instagram");

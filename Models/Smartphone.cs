@@ -94,7 +94,6 @@ namespace DesafioPOO.Models
 
         public void ReceberLigacao()
         {
-            Random random = new Random();
             Console.WriteLine("Recebendo ligação....");
         }
 
